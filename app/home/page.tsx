@@ -190,7 +190,7 @@ export default function HomePage() {
                     >
                         © {new Date().getFullYear()} Kash
                         <Link
-                            href="https://github.com/kash-bot/kash-web"
+                            href="https://github.com/Adrien-A4/kash-web"
                             className="text-white"
                         >
                             GitHub
