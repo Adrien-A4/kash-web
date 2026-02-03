@@ -13,6 +13,7 @@ export function FloatingNavbar() {
                         height={30}
                         className="rounded-full"
                         priority
+                        draggable={false}
                     />
                 </Link>
                 <span className="h-5 w-px bg-white/10" />
@@ -23,8 +24,8 @@ export function FloatingNavbar() {
                     >
                         Commands
                     </Link>
-                    <Link href="/faq" className="hover:text-white transition">
-                        FAQ
+                    <Link href="/docs" className="hover:text-white transition">
+                        Docs
                     </Link>
                     <Link
                         href="/premium"
@@ -33,7 +34,7 @@ export function FloatingNavbar() {
                         Premium
                     </Link>
                     <Link
-                        href="https://discord.gg/YOUR_INVITE"
+                        href="/api/invite"
                         target="_blank"
                         className="hover:text-white transition"
                     >

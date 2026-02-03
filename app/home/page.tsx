@@ -35,6 +35,54 @@ export default function HomePage() {
                 >
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(120,120,255,0.15),transparent_60%)]" />
                     <FloatingNavbar />
+                    <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        className="absolute top-6 right-6 z-50"
+                    >
+                        <Link
+                            href="/login"
+                            onClick={(e) => {
+                                e.preventDefault()
+                                handleNavigation('/login')
+                            }}
+                            className="group relative flex items-center gap-2.5 rounded-full border border-white/10 bg-white/4 px-5 py-2.5 text-sm font-medium text-zinc-300 shadow-lg shadow-black/20 backdrop-blur-md transition-all duration-300 ease-out hover:border-white/25 hover:bg-white/8 hover:text-white hover:shadow-[0_0_24px_rgba(120,120,255,0.18)] active:scale-[0.96]"
+                        >
+                            <span className="absolute inset-0 rounded-full opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-[radial-gradient(circle_at_center,rgba(120,120,255,0.08),transparent_70%)]" />
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="15"
+                                height="15"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                className="relative z-10 text-zinc-500 transition-colors duration-300 group-hover:text-zinc-300"
+                            >
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                <circle cx="12" cy="8" r="4" />
+                            </svg>
+                            <span className="relative z-10">Dashboard</span>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="13"
+                                height="13"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2.5"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                className="relative z-10 -mr-1 w-0 overflow-hidden text-zinc-500 transition-all duration-300 group-hover:w-3.25 group-hover:mr-0 group-hover:text-zinc-300"
+                            >
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                                <polyline points="12 5 19 12 12 19" />
+                            </svg>
+                        </Link>
+                    </motion.div>
 
                     <motion.section
                         initial={{ opacity: 0, y: 20 }}
@@ -113,18 +161,7 @@ export default function HomePage() {
                                 <Button
                                     asChild
                                     size="wide"
-                                    className="
-                                        bg-[#5865F2]
-                                        text-white
-                                        border border-[#5865F2]
-                                        rounded-2xl
-                                        transition-all
-                                        duration-300
-                                        ease-out
-                                        hover:bg-[#4752C4]
-                                        hover:shadow-[0_8px_30px_rgba(88,101,242,0.45)]
-                                        active:scale-[0.97]
-                                    "
+                                    className="bg-[#5865F2] text-white border border-[#5865F2] rounded-2xl transition-all duration-300 ease-out hover:bg-[#4752C4] hover:shadow-[0_8px_30px_rgba(88,101,242,0.45)] active:scale-[0.97]"
                                 >
                                     <Link
                                         href="https://discord.com/oauth2/authorize?client_id=1231552173104693249&scope=bot+applications.commands&permissions=8"
@@ -153,31 +190,26 @@ export default function HomePage() {
                                 whileTap={{ scale: 0.95 }}
                                 whileHover={{ scale: 1.05 }}
                             >
-                                <Button
-                                    asChild
-                                    variant="default"
-                                    size="wide"
-                                    className="rounded-4xl border-white text-white"
+                                <Link
+                                    href="/premium"
+                                    onClick={(e) => {
+                                        e.preventDefault()
+                                        handleNavigation('/premium')
+                                    }}
+                                    className="group flex items-center gap-2.5 rounded-2xl border border-[rgba(240,192,64,0.2)] bg-[rgba(240,192,64,0.08)] px-5 py-2.5 transition-all duration-250 hover:bg-[rgba(240,192,64,0.14)] hover:border-[rgba(240,192,64,0.35)]"
                                 >
-                                    <Link
-                                        href="/premium"
-                                        className="flex items-center gap-2"
-                                        onClick={(e) => {
-                                            e.preventDefault()
-                                            handleNavigation('/premium')
-                                        }}
-                                    >
-                                        <Image
-                                            src="/kash.png"
-                                            alt="Premium"
-                                            width={33}
-                                            height={33}
-                                            className="rounded-full"
-                                            priority
-                                        />
+                                    <Image
+                                        src="/kash.png"
+                                        alt="Premium"
+                                        width={25}
+                                        height={25}
+                                        className="rounded-full"
+                                        priority
+                                    />
+                                    <span className="text-sm font-medium text-[#f0c040]">
                                         Premium
-                                    </Link>
-                                </Button>
+                                    </span>
+                                </Link>
                             </motion.div>
                         </motion.div>
                     </motion.section>
@@ -188,13 +220,17 @@ export default function HomePage() {
                         transition={{ delay: 0.5 }}
                         className="mt-32 border-t border-white/10 py-8 text-center text-sm text-zinc-500"
                     >
-                        © {new Date().getFullYear()} Kash
                         <Link
                             href="https://github.com/Adrien-A4/kash-web"
-                            className="text-white"
+                            className="text-zinc-500 hover:text-zinc-400 font-medium"
+                            target="_blank"
                         >
-                            GitHub
+                            Kash
                         </Link>
+                        <div>
+                            © {new Date().getFullYear()} Adrien-A4. All rights
+                            reserved.
+                        </div>
                     </motion.footer>
                 </motion.main>
             )}
