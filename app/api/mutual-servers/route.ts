@@ -10,7 +10,7 @@ export async function GET(req: NextRequest) {
 
     try {
         const backendRes = await fetch(
-            'http://localhost:3001/api/mutual-servers',
+            'http://46.247.108.191:30276/api/mutual-servers',
             {
                 headers: {
                     Authorization: `Bearer ${token}`,

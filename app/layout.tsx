@@ -24,7 +24,7 @@ export const metadata: Metadata = {
             'multipurpose discord bot, with features like moderation, transfer system and more!',
         images: [
             {
-                url: '',
+                url: 'https://kash.rweb.site/kash.png',
             },
         ],
     },

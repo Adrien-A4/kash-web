@@ -62,7 +62,8 @@ export async function GET(
                 { status: 403 }
             )
         }
-        const botApiUrl = process.env.BOT_API_URL || 'http://localhost:3001'
+        const botApiUrl =
+            process.env.BOT_API_URL || 'http://46.247.108.191:30276'
         const botRes = await fetch(`${botApiUrl}/api/guilds/${guildId}`, {
             headers: {
                 'Content-Type': 'application/json',
@@ -108,7 +109,8 @@ export async function GET(
 
 async function checkPremiumStatus(guildId: string): Promise<boolean> {
     try {
-        const botApiUrl = process.env.BOT_API_URL || 'http://localhost:3001'
+        const botApiUrl =
+            process.env.BOT_API_URL || 'http://46.247.108.191:30276'
         const res = await fetch(
             `${botApiUrl}/api/ispremium?guildId=${guildId}`,
             {

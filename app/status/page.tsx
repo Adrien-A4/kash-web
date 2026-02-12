@@ -76,7 +76,7 @@ const Status = () => {
                     cache: 'no-cache',
                 })
             } catch (apiError) {
-                res = await fetch('http://localhost:3001/api/status', {
+                res = await fetch('http://46.247.108.191:30276/api/status', {
                     method: 'GET',
                     cache: 'no-cache',
                 })
@@ -145,7 +145,7 @@ const Status = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="relative min-h-screen overflow-x-hidden overflow-y-auto bg-gradient-to-br from-black via-zinc-950 to-zinc-900 text-white"
+            className="relative min-h-screen overflow-x-hidden overflow-y-auto bg-linear-to-br from-black via-zinc-950 to-zinc-900 text-white"
         >
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(120,120,255,0.12),transparent_60%)]" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(88,101,242,0.08),transparent_50%)]" />
@@ -170,7 +170,7 @@ const Status = () => {
                                 </div>
                             </div>
                             <div>
-                                <h1 className="text-3xl font-bold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
+                                <h1 className="text-3xl font-bold bg-linear-to-r from-white to-white/80 bg-clip-text text-transparent">
                                     Kash Status
                                 </h1>
                                 <p className="text-zinc-400 text-sm">
@@ -233,7 +233,7 @@ const Status = () => {
                         transition={{ duration: 0.4 }}
                         className="lg:col-span-2"
                     >
-                        <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/2 p-6 backdrop-blur-xl">
+                        <div className="rounded-2xl border border-white/10 bg-linear-to-br from-white/5 to-white/2 p-6 backdrop-blur-xl">
                             <div className="flex items-start justify-between mb-6">
                                 <div>
                                     <h2 className="text-xl font-semibold mb-1">
@@ -337,7 +337,7 @@ const Status = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4, delay: 0.1 }}
                     >
-                        <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/2 p-6 backdrop-blur-xl h-full">
+                        <div className="rounded-2xl border border-white/10 bg-linear-to-br from-white/5 to-white/2 p-6 backdrop-blur-xl h-full">
                             <h3 className="text-lg font-semibold mb-4">
                                 Uptime
                             </h3>
@@ -407,7 +407,7 @@ const Status = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: 0.2 }}
-                    className="rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/2 p-6 backdrop-blur-xl"
+                    className="rounded-2xl border border-white/10 bg-linear-to-br from-white/5 to-white/2 p-6 backdrop-blur-xl"
                 >
                     <div className="flex items-center justify-between mb-6">
                         <div>

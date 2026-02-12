@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import fetch from 'node-fetch'
 import cookie from 'cookie'
+import { m } from 'framer-motion'
 
 export async function GET(req: Request) {
     const url = new URL(req.url)
@@ -76,12 +77,12 @@ export async function GET(req: Request) {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    content: `👋 Welcome to the dashboard, ${user.username}! Thank you for using our bot. If you have any questions, feel free to ask!`,
+                    content: `Welcome to the dashboard, ${user.username}! Feel free to explore the dashboard and manage your settings. Enjoy!`,
                 }),
             }
         )
 
-        const response = NextResponse.redirect('http:/localhost:3000/servers')
+        const response = NextResponse.redirect('https://kash.rweb.site/servers')
         response.headers.set(
             'Set-Cookie',
             cookie.serialize('discord_token', tokenData.access_token, {
